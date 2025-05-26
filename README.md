@@ -1,5 +1,6 @@
 # ChatBox
 Building a scalable web application using node js
+
 **INTRODUCTION**
 **EVENT-DRIVEN**
 Node.js uses an event-driven communication from a Node application to other things inside of the Internet of Things. This could be a database read and write request, changing of files on filesystem, or making an HTTP request to a separate web server, such as a Google API for fetching a map for the user's current location. All of these use I/O, and I/O takes time . This approach allows Node.js to handle multiple tasks concurrently, improving performance and scalability.
