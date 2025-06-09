@@ -1,0 +1,56 @@
+INTRODUCTION
+EVENT-DRIVEN
+Node.js uses an event-driven communication from a Node application to other things inside of the Internet of Things. This could be a database read and write request, changing of files on filesystem, or making an HTTP request to a separate web server, such as a Google API for fetching a map for the user's current location. All of these use I/O, and I/O takes time . This approach allows Node.js to handle multiple tasks concurrently, improving performance and scalability.
+
+NON-BLOCKING I/O MODEL
+Node.js uses non-blocking I/O model that makes it lightweight and efficient, because it’s able to cut down the time its application took by half. I/O, which is short form for input/output, is something that an application does all of the time. When users read or write to a database. This non-blocking I/O model makes the application super quick. That means while one user is requesting a URL from Google, other users can be requesting a database file read and write access, they can be requesting all sorts of things without preventing anyone else from getting some work done.
+ 
+SINGLE-THREADED EVENT LOOP ARCHITECTURE
+Node.js operates on a single-threaded event loop architecture, which means that Node application runs on one single thread and work on any operating system. A single thread means that Node.js has an extremely low-memory footprint when used as a web server and can potentially serve a lot more requests . A single thread efficiently managed by an event loop brings stability, maintainability, readability, and resilience to Node programs .
+
+NODE.JS HANDLES CONCURRENT CONNECTIONS
+Node.js was created in reaction to slow web servers in Ruby and other dynamic languages at that time. These servers were slow because they were only capable of handling a single request at a time. Any work that involved I/O (e.g. network or file system access) was “blocking”. The program would not be able to perform any work while waiting on these blocking resources. 
+Node.js changed this model by making all I/O tasks non-blocking and asynchronous. This allowed web servers written in Node.js to serve thousands of requests concurrently– subsequent requests didn’t have to wait for previous ones to complete . This changed model making it suitable for applications with high traffic or real-time requirements such as chatbox and gaming applications.
+
+ROLES OF NPM (NODE PACKAGE MANAGER)
+NPM is the package manager for Node.js, providing access to a vast ecosystem of libraries and tools, and plays the following roles:
+•	Package Management: NPM allows developers to easily install, update, and manage packages and dependencies.
+•	Dependency Management: NPM manages dependencies for Node.js projects, ensuring that the required packages are installed and up-to-date.
+•	Community-Driven: NPM is community-driven, with developers contributing packages and modules to the ecosystem.
+NODE.JS SCALABILITY FEATURES VERSUS TRADITIONAL SERVER-SIDE TECHNOLOGIES
+NODE.JS SCALABILITY FEATURES	TRADITIONAL SERVER-SIDE TECHNOLOGIES SCALABILITY FEATURES
+
+built on event-driven, non-blocking I/O model	typically uses blocking I/O or threading
+Use horizontal scaling, easy to add more nodes	Use vertical scaling, often requires more powerful servers
+Efficiently handles concurrent connections with single-threaded event loop	use multi-threading or multi-processing, which can introduce complexity
+Asynchronous, non-blocking request handling	May be synchronous or asynchronous, depending on the framework
+Well-suited for microservices architecture, easy to create small, independent services	Can be used for microservices architecture, but may require more overhead
+Low memory footprint, suitable for real-time applications	have higher memory usage, especially with complex applications
+Easy to implement load balancing with Node.js clusters or external load balancers	Can be implemented, but may require more complex configuration
+Node.js is an excellent choice for real-time applications that require high concurrency and low latency	May be more suitable for integrating with legacy systems or third-party services
+
+NODE.JS: PROS AND CONS
+PROS
+Node.js offers high performance and scalability due to its event-driven, non-blocking I/O model, making it suitable for real-time applications and high-traffic servers.
+Node.js has a vast ecosystem of packages and modules, with over 1 million packages available on npm (Node Package Manager), allowing developers to easily find and use existing solutions.
+Node.js allows developers to use JavaScript on both the frontend and backend, reducing the need to learn multiple languages and enabling code reuse.
+Node.js is well-suited for real-time applications, such as chatbots, live updates, and gaming, due to its event-driven architecture and WebSocket support.
+Node.js is widely adopted by major corporations, including Netflix, PayPal, and LinkedIn, and has a large and active community, ensuring there are many resources available for learning and troubleshooting.
+CONS
+Node.js is not well-suited for CPU-intensive tasks, as its single-threaded event loop can become blocked by long-running tasks, potentially impacting performance.
+Node.js's asynchronous nature can lead to "callback hell," where nested callbacks make code difficult to read and maintain. Solutions include using Promises or async/await.
+Node.js's asynchronous nature can make error handling challenging, as errors may not be immediately apparent. Developers need to use try-catch blocks and error callbacks to handle errors effectively.
+Node.js's asynchronous nature can make database queries challenging, particularly when dealing with complex queries or multiple database interactions. Developers need to use techniques like Promises or async/await to manage database queries effectively.
+IMPLEMENTATION OF THE CHATBOX DEVELOPED
+To run the application type: npm start on your command prompt after navigating to the app. directory.
+This application is a simple chat application built using Node.js and WebSockets. It allows users to send and receive messages in real-time. The Client-side was built using React, the client-side application sends messages to the server using WebSockets, while The Server-side was built using Node.js, the server-side application receives messages, generates a response using simple chatbot logic, and sends the response back to the client.
+The scalability capacity of Node.js is demonstrated in this application through its ability to handle multiple connections and events simultaneously. This makes it an ideal choice for building real-time applications that require handling a large number of users.
+
+REFERENCE
+  Mead, A. (2018). Learning Node.js Development. Packt Publishing Ltd, UK, p. 2, 33, 49.
+
+  Syed, B.A. (nd). Beginning Node.js. Online pdf publication, retrieved on May 15th, 2025, p. 28-29.
+
+  Pasquali, S. (2013). Mastering Node.js. Packt Publishing Ltd, UK, p. 188.
+
+  Guttman, D. (2019). Fullstack Node.js. Fullstack.io.
